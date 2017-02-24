@@ -3,6 +3,7 @@ FactoryGirl.define do
     name "test"
     description "test"
     address
+    block true
     user 
   end
 end

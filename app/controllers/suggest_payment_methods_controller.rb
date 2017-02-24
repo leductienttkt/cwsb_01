@@ -62,7 +62,7 @@ class SuggestPaymentMethodsController < ApplicationController
             .except(:created_at, :updated_at, :id)
           return false unless payment_method
           if @venue.payment_methods.paypal.pluck(:is_chosen).include?(true) &&
-            @venue.payment_methods.paypal.count > number_is_chosen
+            @venue.payment_methods.paypal.count > Settings.number_is_chosen
             payment_method.update_attributes is_chosen: false
           end
         end

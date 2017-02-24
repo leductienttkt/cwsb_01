@@ -31,6 +31,7 @@ class Venue < ApplicationRecord
 
   validates :description, presence: true
   validates :name, presence: true
+  validates :block, presence: true
 
   delegate :details, :city, :street_address, :postal_code, :unit,
     to: :address, prefix: true, allow_nil: true
